@@ -1,0 +1,38 @@
+.root {
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  fill: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.root > * {
+  opacity: 0.1;
+}
+
+.cls1 {
+  fill: #5e5e5e;
+}
+.cls2 {
+  fill: #6b6b6b;
+}
+.cls3 {
+  fill: #7a7a7a;
+}
+.cls4 {
+  fill: #848484;
+}
+.cls5 {
+  fill: #8e8e8e;
+}
+.cls6 {
+  fill: #a3a3a3;
+}
