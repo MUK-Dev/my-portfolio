@@ -1,9 +1,9 @@
 .root {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  height: 100vh;
   background-color: var(--background);
   color: var(--text);
 }

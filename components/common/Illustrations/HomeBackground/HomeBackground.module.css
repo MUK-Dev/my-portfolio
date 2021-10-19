@@ -1,16 +1,18 @@
 .root {
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
   position: fixed;
-  top: -100px;
-  left: -100px;
+  top: -150px;
+  left: auto;
+  right: -80px;
   fill: none;
 }
 
 @media only screen and (max-width: 600px) {
   .root {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
+    right: -100px;
   }
 }
 
@@ -19,20 +21,20 @@
 }
 
 .cls1 {
-  fill: #5e5e5e;
+  fill: #464b61;
 }
 .cls2 {
-  fill: #6b6b6b;
+  fill: #5b617c;
 }
 .cls3 {
-  fill: #7a7a7a;
+  fill: #697091;
 }
 .cls4 {
-  fill: #848484;
+  fill: #757c9b;
 }
 .cls5 {
-  fill: #8e8e8e;
+  fill: #8c94b9;
 }
 .cls6 {
-  fill: #a3a3a3;
+  fill: #959fc9;
 }

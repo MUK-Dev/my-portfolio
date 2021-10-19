@@ -107,6 +107,7 @@
 
 .root .components {
   animation: animateComponents 0.8s infinite alternate;
+  mix-blend-mode: hard-light;
 }
 
 @keyframes animateComponents {
@@ -115,6 +116,6 @@
     opacity: 0;
   }
   to {
-    transform: translateX(100px) translateY(28px);
+    transform: translateX(110px) translateY(26px);
   }
 }

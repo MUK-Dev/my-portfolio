@@ -26,8 +26,8 @@ const HomeBackground = () => {
         cx="426"
         variants={background}
         initial="hidden"
+        transition={{ duration: 0.1, delay: 1 }}
         animate="show"
-        transition={{ duration: 0.1, delay: 0.1 }}
         cy="426"
         r="426"
       />
@@ -39,7 +39,7 @@ const HomeBackground = () => {
         variants={background}
         initial="hidden"
         animate="show"
-        transition={{ duration: 0.1, delay: 0.2 }}
+        transition={{ duration: 0.1, delay: 0.8 }}
         cy="426"
         r="355"
       />
@@ -51,7 +51,7 @@ const HomeBackground = () => {
         variants={background}
         initial="hidden"
         animate="show"
-        transition={{ duration: 0.1, delay: 0.4 }}
+        transition={{ duration: 0.1, delay: 0.6 }}
         cy="426"
         r="284"
       />
@@ -63,7 +63,7 @@ const HomeBackground = () => {
         variants={background}
         initial="hidden"
         animate="show"
-        transition={{ duration: 0.1, delay: 0.6 }}
+        transition={{ duration: 0.1, delay: 0.4 }}
         cy="426"
         r="213"
       />
@@ -75,7 +75,7 @@ const HomeBackground = () => {
         variants={background}
         initial="hidden"
         animate="show"
-        transition={{ duration: 0.1, delay: 0.8 }}
+        transition={{ duration: 0.1, delay: 0.2 }}
         cy="426"
         r="142"
       />
@@ -86,8 +86,8 @@ const HomeBackground = () => {
         cx="426"
         variants={background}
         initial="hidden"
+        transition={{ duration: 0.1, delay: 0 }}
         animate="show"
-        transition={{ duration: 0.1, delay: 1 }}
         cy="426"
         r="71"
       />

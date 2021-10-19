@@ -1,4 +1,5 @@
 import "materialize-css/dist/css/materialize.min.css";
+import "keen-slider/keen-slider.min.css";
 
 import "../styles/_app.css";
 

@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.19",
     "@types/react": "^17.0.27",
     "framer-motion": "^4.1.17",
+    "keen-slider": "^5.5.1",
     "materialize-css": "^1.0.0-rc.2",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-inview": "^4.3.11",
+    "react-page-scroller": "^2.2.1",
     "typescript": "^4.4.3"
   },
   "devDependencies": {

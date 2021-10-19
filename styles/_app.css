@@ -6,6 +6,33 @@
 .app {
   --background: rgb(18, 18, 31);
   --layer: rgb(26, 26, 48);
+  --inner-layer: rgb(42, 42, 75);
   --text-light: rgba(212, 212, 231, 0.678);
   --text: rgb(206, 206, 255);
+  --text-black: rgb(51, 51, 51);
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f15d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  transition: all 0.5s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

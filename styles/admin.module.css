@@ -1,0 +1,13 @@
+.root {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.sections {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-column-gap: 1em;
+  grid-row-gap: 2em;
+}

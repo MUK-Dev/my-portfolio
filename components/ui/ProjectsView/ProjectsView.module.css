@@ -1,0 +1,18 @@
+.root {
+  text-align: center;
+  padding-left: 10px;
+}
+.root h2 {
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 50px;
+}
+.root span {
+  display: block;
+  color: var(--text-light);
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 50px;
+}
+
+.root p {
+  font-family: "Courier New", Courier, monospace;
+}
