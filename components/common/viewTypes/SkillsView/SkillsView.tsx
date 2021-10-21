@@ -22,7 +22,7 @@ const list = {
 };
 
 interface Props {
-  skills: string[];
+  skills: [{ skill: string }];
   type?: "A" | "B";
   title: string;
   shouldAnimate: boolean;
@@ -72,7 +72,7 @@ const SkillsView: FC<Props> = ({
     ) : (
       <div className={`col s12 m6 ${s.leftList}`}>
         <ul>
-          {skills.map((skill, index) => {
+          {skills.map((s, index) => {
             return (
               <motion.li
                 animate={animation}
@@ -81,9 +81,9 @@ const SkillsView: FC<Props> = ({
                   type: "spring",
                   bounce: 0.5,
                 }}
-                key={skill}
+                key={s.skill}
               >
-                {skill}
+                {s.skill}
               </motion.li>
             );
           })}
@@ -104,9 +104,9 @@ const SkillsView: FC<Props> = ({
                   type: "spring",
                   bounce: 0.5,
                 }}
-                key={s}
+                key={s.skill}
               >
-                {s}
+                {s.skill}
               </motion.li>
             );
           })}

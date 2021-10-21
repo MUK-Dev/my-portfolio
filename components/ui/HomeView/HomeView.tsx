@@ -30,7 +30,7 @@ const HomeView = () => {
       className={`row ${s.root}`}
     >
       <div className="col s12 m6 center-align">
-        <h1>M. Usman Khiji</h1>
+        <h1>M. Usman Khilji</h1>
         <motion.hr
           variants={hr}
           initial="hidden"

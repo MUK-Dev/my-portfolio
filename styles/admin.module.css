@@ -1,13 +1,15 @@
 .root {
   min-height: 100vh;
+  width: 100%;
   background-color: var(--background);
   color: var(--text);
 }
 
-.sections {
+.responses {
+  margin-top: 100px;
   display: grid;
-  padding: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-column-gap: 1em;
-  grid-row-gap: 2em;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }

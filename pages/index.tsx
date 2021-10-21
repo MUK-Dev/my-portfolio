@@ -14,33 +14,51 @@ import {
   ProjectsView,
 } from "@components/ui";
 import { InferGetStaticPropsType } from "next";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../firebase";
 
 export const getStaticProps = async () => {
+  const frontendCollectionRef = collection(db, "frontend-skills");
+  const backendCollectionRef = collection(db, "backend-skills");
+  const projectsCollectionRef = collection(db, "projects");
+
+  // const frontendSkills = [];
+  // const backendSkills = [];
+  // const projectsData = [];
+
+  // const frontend = await getDocs(query(frontendCollectionRef));
+  // const backend = await getDocs(query(backendCollectionRef));
+  // const projects = await getDocs(query(projectsCollectionRef));
+
+  // frontend.docs.map((d) => frontendSkills.push(d.data()));
+  // backend.docs.map((d) => backendSkills.push(d.data()));
+  // projects.docs.map((d) => projectsData.push(d.data()));
+
   const frontendSkills = [
-    "HTML",
-    "CSS",
-    "Vanilla JS",
-    "Bootstrap",
-    "Materialize CSS",
-    "Adobe Illustrator",
-    "SVG creation & animation",
-    "React",
-    "Material UI",
-    "Tailwind CSS",
-    "Next.js",
+    { skill: "HTML" },
+    { skill: "CSS" },
+    { skill: "Vanilla JS" },
+    { skill: "Bootstrap" },
+    { skill: "Materialize CSS" },
+    { skill: "Adobe Illustrator" },
+    { skill: "SVG creation & animation" },
+    { skill: "React" },
+    { skill: "Material UI" },
+    { skill: "Tailwind CSS" },
+    { skill: "Next.js" },
   ];
 
   const backendSkills = [
-    "Node.js",
-    "Express",
-    "ejs Templating",
-    "Feathers.js",
-    "MongoDB",
-    "MySQL",
-    "PostgresSQL",
-    "Firebase",
-    "Socket.io",
-    "File Uploads",
+    { skill: "Node.js" },
+    { skill: "Express" },
+    { skill: "ejs Templating" },
+    { skill: "Feathers.js" },
+    { skill: "MongoDB" },
+    { skill: "MySQL" },
+    { skill: "PostgresSQL" },
+    { skill: "Firebase" },
+    { skill: "Socket.io" },
+    { skill: "File Uploads" },
   ];
 
   const projects = [
@@ -120,11 +138,17 @@ export default function Home({
       </section>
 
       <section className={s.root}>
-        <FrontendSkillsView skills={frontendSkills} count={pageNo} />
+        <FrontendSkillsView
+          skills={frontendSkills as [{ skill: string }]}
+          count={pageNo}
+        />
       </section>
 
       <section className={s.root}>
-        <BackendSkillsView skills={backendSkills} count={pageNo} />
+        <BackendSkillsView
+          skills={backendSkills as [{ skill: string }]}
+          count={pageNo}
+        />
       </section>
 
       <section className={s.root}>

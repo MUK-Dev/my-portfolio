@@ -1,62 +1,46 @@
+import { Response } from "@components/common/customElements";
+import { AdminForms } from "@components/ui";
 import s from "../styles/admin.module.css";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../firebase";
+import { InferGetStaticPropsType } from "next";
 
-const admin = () => {
+export const getStaticProps = async () => {
+  const responsesCollectionRef = collection(db, "responses");
+  const responses = [];
+
+  try {
+    const responsesData = await getDocs(query(responsesCollectionRef));
+    responsesData.docs.map((d) => responses.push(d.data()));
+  } catch (err) {
+    console.log(err);
+  }
+
+  return {
+    props: {
+      responses,
+    },
+    revalidate: 4 * 60 * 60,
+  };
+};
+
+const admin = ({
+  responses,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className={s.root}>
-      <div className={s.sections}>
-        <form>
-          <h6>Add Frontend Skills</h6>
-          <div className="input-field">
-            <input
-              id="email"
-              type="text"
-              className="validate white-text"
-              onChange={(e) => {}}
-            />
-          </div>
-          <button className="btn waves-effect waves-light">
-            Add Frontend Skill
-          </button>
-        </form>
-        <form>
-          <h6>Add Backend Skills</h6>
-          <div className="input-field">
-            <input
-              id="name"
-              type="text"
-              className="validate white-text"
-              onChange={(e) => {}}
-            />
-          </div>
-          <button className="btn waves-effect waves-light">
-            Add Backend Skill
-          </button>
-        </form>
-        <form>
-          <h6>Add Experience</h6>
-          <p>Title</p>
-          <div className="input-field">
-            <input
-              id="name"
-              type="text"
-              className="validate white-text"
-              onChange={(e) => {}}
-            />
-          </div>
-          <p>Description</p>
-          <div className="input-field">
-            <input
-              id="name"
-              type="text"
-              className="validate white-text"
-              onChange={(e) => {}}
-            />
-          </div>
-          <button className="btn waves-effect waves-light">
-            Add to Experience
-          </button>
-        </form>
-      </div>
+      <section>
+        <AdminForms />
+      </section>
+      <section className={s.responses}>
+        {responses.length > 0 ? (
+          responses.map(({ email, name, message }) => (
+            <Response email={email} name={name} message={message} />
+          ))
+        ) : (
+          <h5>No Responses</h5>
+        )}
+      </section>
     </div>
   );
 };

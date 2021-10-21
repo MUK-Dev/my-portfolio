@@ -4,7 +4,7 @@ import SkillsView from "@components/common/viewTypes/SkillsView";
 
 interface Props {
   count: number;
-  skills: string[];
+  skills: [{ skill: string }];
 }
 
 const BackendSkillsView: FC<Props> = ({ count, skills }) => {

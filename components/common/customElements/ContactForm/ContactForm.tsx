@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import postResponse from "firebase_functions/post-response";
+import { useState } from "react";
 
 import s from "./ContactForm.module.css";
 
@@ -7,12 +8,10 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitContactForm = () => {};
-
   return (
     <form
       className={`center-align card z-index0 ${s.root}`}
-      onSubmit={submitContactForm}
+      onSubmit={(event) => postResponse(event, email, name, message)}
     >
       <h2>Get In Touch</h2>
       <div className="input-field col s12">
