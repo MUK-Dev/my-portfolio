@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import ReactPageScroller from "react-page-scroller";
+import { motion, AnimatePresence } from "framer-motion";
+import { InferGetStaticPropsType } from "next";
+import { collection, getDocs, query } from "firebase/firestore";
 
 import s from "../styles/index.module.css";
 import { OnLoadAnimation } from "@components/animations";
-import { motion, AnimatePresence } from "framer-motion";
 import { HomeBackground } from "@components/common/Illustrations";
 import {
   BackendSkillsView,
@@ -13,8 +15,6 @@ import {
   HomeView,
   ProjectsView,
 } from "@components/ui";
-import { InferGetStaticPropsType } from "next";
-import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const getStaticProps = async () => {
@@ -22,85 +22,86 @@ export const getStaticProps = async () => {
   const backendCollectionRef = collection(db, "backend-skills");
   const projectsCollectionRef = collection(db, "projects");
 
-  // const frontendSkills = [];
-  // const backendSkills = [];
-  // const projectsData = [];
+  const frontendSkills = [];
+  const backendSkills = [];
+  const projectsData = [];
 
-  // const frontend = await getDocs(query(frontendCollectionRef));
-  // const backend = await getDocs(query(backendCollectionRef));
-  // const projects = await getDocs(query(projectsCollectionRef));
+  const frontend = await getDocs(query(frontendCollectionRef));
+  const backend = await getDocs(query(backendCollectionRef));
+  const projects = await getDocs(query(projectsCollectionRef));
 
-  // frontend.docs.map((d) => frontendSkills.push(d.data()));
-  // backend.docs.map((d) => backendSkills.push(d.data()));
-  // projects.docs.map((d) => projectsData.push(d.data()));
+  frontend.docs.map((d) => frontendSkills.push(d.data()));
+  backend.docs.map((d) => backendSkills.push(d.data()));
+  projects.docs.map((d) => projectsData.push(d.data()));
 
-  const frontendSkills = [
-    { skill: "HTML" },
-    { skill: "CSS" },
-    { skill: "Vanilla JS" },
-    { skill: "Bootstrap" },
-    { skill: "Materialize CSS" },
-    { skill: "Adobe Illustrator" },
-    { skill: "SVG creation & animation" },
-    { skill: "React" },
-    { skill: "Material UI" },
-    { skill: "Tailwind CSS" },
-    { skill: "Next.js" },
-  ];
+  // const frontendSkills = [
+  //   { skill: "HTML" },
+  //   { skill: "CSS" },
+  //   { skill: "Vanilla JS" },
+  //   { skill: "Bootstrap" },
+  //   { skill: "Materialize CSS" },
+  //   { skill: "Adobe Illustrator" },
+  //   { skill: "SVG creation & animation" },
+  //   { skill: "React" },
+  //   { skill: "Material UI" },
+  //   { skill: "Tailwind CSS" },
+  //   { skill: "Next.js" },
+  // ];
 
-  const backendSkills = [
-    { skill: "Node.js" },
-    { skill: "Express" },
-    { skill: "ejs Templating" },
-    { skill: "Feathers.js" },
-    { skill: "MongoDB" },
-    { skill: "MySQL" },
-    { skill: "PostgresSQL" },
-    { skill: "Firebase" },
-    { skill: "Socket.io" },
-    { skill: "File Uploads" },
-  ];
+  // const backendSkills = [
+  //   { skill: "Node.js" },
+  //   { skill: "Express" },
+  //   { skill: "ejs Templating" },
+  //   { skill: "Feathers.js" },
+  //   { skill: "MongoDB" },
+  //   { skill: "MySQL" },
+  //   { skill: "PostgresSQL" },
+  //   { skill: "Firebase" },
+  //   { skill: "Socket.io" },
+  //   { skill: "File Uploads" },
+  // ];
 
-  const projects = [
-    {
-      title: "Paynest",
-      description:
-        "A Crypto Currency App made with Flutter and Firebase. (Android)",
-    },
-    {
-      title: "Whooly Craft",
-      description:
-        "e-Commerce Application made in MERN Stack. (Frontend + Backend + Admin Panel)",
-    },
-    {
-      title: "Let's Write",
-      description:
-        "Real Time Question & Answer MERN App with Rooms. (Frontend + Backend)",
-    },
-    {
-      title: "Bethak",
-      description: "Restaurant Management System made with React and Firebase.",
-    },
-    {
-      title: "We-Link",
-      description: "Chat App Backend made in Node.js Express MongoDB",
-    },
-    {
-      title: "WrtArt",
-      description: "Article Web App made in MERN stack. (Frontend + Backend)",
-    },
-    {
-      title: "Shopify eCommerce NEXT",
-      description:
-        "e-Commerce App made with NEXT.js, Typescript, and Shopify Api",
-    },
-  ];
+  // const projects = [
+  //   {
+  //     title: "Paynest",
+  //     description:
+  //       "A Crypto Currency App made with Flutter and Firebase. (Android)",
+  //   },
+  //   {
+  //     title: "Whooly Craft",
+  //     description:
+  //       "e-Commerce Application made in MERN Stack. (Frontend + Backend + Admin Panel)",
+  //   },
+  //   {
+  //     title: "Let's Write",
+  //     description:
+  //       "Real Time Question & Answer MERN App with Rooms. (Frontend + Backend)",
+  //   },
+  //   {
+  //     title: "Bethak",
+  //     description: "Restaurant Management System made with React and Firebase.",
+  //   },
+  //   {
+  //     title: "We-Link",
+  //     description: "Chat App Backend made in Node.js Express MongoDB",
+  //   },
+  //   {
+  //     title: "WrtArt",
+  //     description: "Article Web App made in MERN stack. (Frontend + Backend)",
+  //   },
+  //   {
+  //     title: "Shopify eCommerce NEXT",
+  //     description:
+  //       "e-Commerce App made with NEXT.js, Typescript, and Shopify Api",
+  //   },
+  // ];
 
   return {
     props: {
       frontendSkills,
       backendSkills,
-      projects,
+      // projects,
+      projects: projectsData,
     },
     revalidate: 4 * 60 * 60,
   };

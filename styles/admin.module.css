@@ -6,7 +6,7 @@
 }
 
 .responses {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

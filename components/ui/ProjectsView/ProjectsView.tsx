@@ -5,7 +5,7 @@ import s from "./ProjectsView.module.css";
 import { Slide } from "@components/common/customElements";
 import { motion, useAnimation } from "framer-motion";
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
 };
