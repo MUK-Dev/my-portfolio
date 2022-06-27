@@ -112,7 +112,7 @@ export default function Home({
   backendSkills,
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [animation, stopAnimation] = useState(false);
+  const [animation, stopAnimation] = useState(true);
 
   const [pageNo, setPageNo] = useState<number>(0);
 
