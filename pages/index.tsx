@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import ReactPageScroller from "react-page-scroller";
-import { motion, AnimatePresence } from "framer-motion";
-import { InferGetStaticPropsType } from "next";
-import { collection, getDocs, query } from "firebase/firestore";
+import React, { useState } from 'react';
+import ReactPageScroller from 'react-page-scroller';
+import { motion, AnimatePresence } from 'framer-motion';
+import { InferGetStaticPropsType } from 'next';
+import { collection, getDocs, query } from 'firebase/firestore';
 
-import s from "../styles/index.module.css";
-import { OnLoadAnimation } from "@components/animations";
-import { HomeBackground } from "@components/common/Illustrations";
+import s from '../styles/index.module.css';
+import { OnLoadAnimation } from '@components/animations';
+import { HomeBackground } from '@components/common/Illustrations';
 import {
   BackendSkillsView,
   ConclusionView,
@@ -14,13 +14,13 @@ import {
   FrontendSkillsView,
   HomeView,
   ProjectsView,
-} from "@components/ui";
-import { db } from "../firebase";
+} from '@components/ui';
+import { db } from '../firebase';
 
 export const getStaticProps = async () => {
-  const frontendCollectionRef = collection(db, "frontend-skills");
-  const backendCollectionRef = collection(db, "backend-skills");
-  const projectsCollectionRef = collection(db, "projects");
+  const frontendCollectionRef = collection(db, 'frontend-skills');
+  const backendCollectionRef = collection(db, 'backend-skills');
+  const projectsCollectionRef = collection(db, 'projects');
 
   const frontendSkills = [];
   const backendSkills = [];
@@ -112,7 +112,7 @@ export default function Home({
   backendSkills,
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [animation, stopAnimation] = useState(true);
+  const [animation, stopAnimation] = useState(false);
 
   const [pageNo, setPageNo] = useState<number>(0);
 
@@ -123,7 +123,7 @@ export default function Home({
   const body = animation ? (
     <motion.div
       className={s.loading}
-      key="animate-on-load"
+      key='animate-on-load'
       onAnimationComplete={() => stopAnimation(false)}
     >
       <OnLoadAnimation

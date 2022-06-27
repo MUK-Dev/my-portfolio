@@ -5,19 +5,17 @@
 
 .root h1 {
   color: var(--text);
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   letter-spacing: 6px;
 }
 
 .fire {
-  width: 150px;
-  height: 150px;
   position: absolute;
   top: auto;
-  bottom: 20px;
+  bottom: 0;
   left: 50%;
 }
-.fire div {
+.fire svg {
   position: relative;
-  left: -50%;
+  left: -45%;
 }

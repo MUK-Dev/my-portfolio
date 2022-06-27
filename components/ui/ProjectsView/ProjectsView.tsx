@@ -1,9 +1,9 @@
-import { FC, Ref, useEffect, useRef, useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import { FC, Ref, useEffect, useRef, useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
 
-import s from "./ProjectsView.module.css";
-import { Slide } from "@components/common/customElements";
-import { motion, useAnimation } from "framer-motion";
+import s from './ProjectsView.module.css';
+import { Slide } from '@components/common/customElements';
+import { motion, useAnimation } from 'framer-motion';
 
 export type Project = {
   title: string;
@@ -28,10 +28,10 @@ const ProjectsView: FC<Props> = ({ projects, count }) => {
   });
 
   useEffect(() => {
-    sliderRef.current.addEventListener("mouseover", () => {
+    sliderRef.current.addEventListener('mouseover', () => {
       setPause(true);
     });
-    sliderRef.current.addEventListener("mouseout", () => {
+    sliderRef.current.addEventListener('mouseout', () => {
       setPause(false);
     });
   }, [sliderRef]);
@@ -77,11 +77,11 @@ const ProjectsView: FC<Props> = ({ projects, count }) => {
         animate={animation}
         transition={{ delay: 0.3 }}
         ref={sliderRef as Ref<HTMLDivElement>}
-        className="keen-slider"
+        className='keen-slider'
       >
         {projects.map((p, index) => {
           return (
-            <div key={index} className="keen-slider__slide">
+            <div key={index} className='keen-slider__slide'>
               <Slide title={p.title} description={p.description} />
             </div>
           );

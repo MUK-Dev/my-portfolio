@@ -1,7 +1,7 @@
-import { motion, useAnimation } from "framer-motion";
-import { FC, useEffect } from "react";
+import { motion, useAnimation } from 'framer-motion';
+import { FC, useEffect } from 'react';
 
-import s from "./SkillsView.module.css";
+import s from './SkillsView.module.css';
 
 const heading = {
   hidden: { scale: 0 },
@@ -23,14 +23,14 @@ const list = {
 
 interface Props {
   skills: [{ skill: string }];
-  type?: "A" | "B";
+  type?: 'A' | 'B';
   title: string;
   shouldAnimate: boolean;
 }
 
 const SkillsView: FC<Props> = ({
   skills,
-  type = "A",
+  type = 'A',
   title,
   shouldAnimate,
 }) => {
@@ -51,20 +51,20 @@ const SkillsView: FC<Props> = ({
     }
     if (!shouldAnimate) {
       animation.start({
-        x: type === "A" ? 80 : -80,
+        x: type === 'A' ? 80 : -80,
         y: 20,
         opacity: 0,
       });
       heading.start({
-        x: type === "A" ? -40 : 40,
+        x: type === 'A' ? -40 : 40,
         opacity: 0,
       });
     }
   }, [shouldAnimate]);
 
   const leftColumn =
-    type === "A" ? (
-      <div className="col s12 l6 center-align">
+    type === 'A' ? (
+      <div className='col s12 l6 center-align'>
         <motion.h1 animate={heading} transition={{ duration: 0.7 }}>
           {title}
         </motion.h1>
@@ -77,8 +77,8 @@ const SkillsView: FC<Props> = ({
               <motion.li
                 animate={animation}
                 transition={{
-                  delay: index * 0.01,
-                  type: "spring",
+                  delay: shouldAnimate ? index * 0.1 : 0,
+                  type: 'spring',
                   bounce: 0.5,
                 }}
                 key={s.skill}
@@ -92,16 +92,16 @@ const SkillsView: FC<Props> = ({
     );
 
   const rightColumn =
-    type === "A" ? (
-      <div className="col s12 l6">
+    type === 'A' ? (
+      <div className='col s12 l6'>
         <ul>
           {skills.map((s, index) => {
             return (
               <motion.li
                 animate={animation}
                 transition={{
-                  delay: index * 0.01,
-                  type: "spring",
+                  delay: shouldAnimate ? index * 0.1 : 0,
+                  type: 'spring',
                   bounce: 0.5,
                 }}
                 key={s.skill}
@@ -113,7 +113,7 @@ const SkillsView: FC<Props> = ({
         </ul>
       </div>
     ) : (
-      <div className="col s12 m6 center-align">
+      <div className='col s12 m6 center-align'>
         <motion.h1 animate={heading} transition={{ duration: 0.7 }}>
           {title}
         </motion.h1>

@@ -3,7 +3,7 @@
 }
 
 .root h1 {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   color: var(--text);
   text-shadow: 0px 0px 20px var(--text-black);
   font-size: 2.5rem;
@@ -12,9 +12,7 @@
 .root li {
   text-decoration: none;
   font-size: 1.5rem;
-  margin: 10px 0;
-  padding: 0 20px;
-  border-left: 1px solid brown;
+  margin: 15px 0;
 }
 
 .leftList {
