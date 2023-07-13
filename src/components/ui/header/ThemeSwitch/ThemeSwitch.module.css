@@ -1,0 +1,113 @@
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2e78b9;
+  transition: all 0.4s ease-in-out;
+  border-radius: 30px;
+  box-shadow: inset 0px 3px 5px #1e1e1e7c;
+  background-size: cover;
+}
+
+.slider > .thumb {
+  position: absolute;
+  content: '';
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-size: cover;
+  transition: all 0.4s ease-in-out;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.slider::after {
+  position: absolute;
+  content: '';
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  left: -0.5em;
+  bottom: -0.5em;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.3) 0 25%,
+    rgba(255, 255, 255, 0.2) 25% 50%,
+    rgba(255, 255, 255, 0.1) 50% 75%,
+    rgba(255, 255, 255, 0.1) 75% 100%
+  );
+  transition: all 0.4s ease-in-out;
+  z-index: 30;
+}
+
+input:checked + .slider {
+  background-color: #191d2a;
+}
+
+input:checked + .slider > .thumb {
+  transform: translateX(3em);
+}
+
+input:checked + .slider > .thumb > .moon {
+  transform: translateX(-1.4em);
+}
+
+input:checked + .slider:after {
+  transform: translateX(3em);
+}
+
+.imagesContainer {
+  transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  right: auto;
+  top: 0;
+  width: 100%;
+  border-radius: 30px;
+  transform: translateY(-2em);
+  z-index: 10;
+}
+
+input:checked + .slider > .imagesContainer {
+  transform: translateY(0);
+}
+
+.night {
+  width: 100%;
+  height: 100%;
+}
+
+.day {
+  width: 100%;
+  height: 100%;
+}
+
+.thumb {
+  display: flex;
+}
+
+.thumb > * {
+  transition: all 0.4s ease-in-out;
+}
