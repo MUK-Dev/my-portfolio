@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { MdPersonOutline } from 'react-icons/md'
 
-import { Header } from '@/src/components/sections'
+import { Header, Hero } from '@/src/components/sections'
 import useThemeMode from '@/src/hooks/useThemeMode'
+
+const getStaticPaths = () => {}
 
 export default function Home() {
   const { isDark } = useThemeMode()
@@ -12,8 +14,9 @@ export default function Home() {
       <Head>
         <title>M. Usman Khilji</title>
       </Head>
-      <main className={`bg-white ${isDark ? 'dark' : ''}`}>
+      <main className={`${isDark ? 'dark' : ''}`}>
         <Header />
+        <Hero />
       </main>
     </>
   )

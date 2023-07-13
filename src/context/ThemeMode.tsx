@@ -8,7 +8,7 @@ export interface ThemeModeContext {
 export const ThemeModeContext = createContext<ThemeModeContext | null>(null)
 
 const ThemeModeProvider = ({ children }: any) => {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
 
   const toggleTheme = () => setIsDark(!isDark)
 
