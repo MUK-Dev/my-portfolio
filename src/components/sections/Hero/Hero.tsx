@@ -44,8 +44,8 @@ const Hero = () => {
   }
 
   return (
-    <main className='font-fasthand flex w-full justify-center items-center h-[90vh] dark:bg-slate-950 transition-colors overflow-hidden relative'>
-      <h1 className='text-7xl dark:text-slate-50'>Hi im Usman</h1>
+    <main className='flex w-full justify-center items-center h-[90vh] dark:bg-slate-950 transition-colors relative'>
+      <h1 className='font-fasthand text-7xl dark:text-slate-50'>Hi im Usman</h1>
       <AnimatePresence mode='popLayout'>
         {isDark ? (
           <motion.div
@@ -105,7 +105,7 @@ const Hero = () => {
               type: 'keyframes',
               ease: 'linear',
             }}
-            className='fixed top-0 left-0 w-full h-screen -z-0'
+            className='absolute top-[-10vh] left-0 w-full h-screen -z-0'
           >
             <Image
               src='/assets/hero/night.png'
@@ -116,10 +116,12 @@ const Hero = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <div
         key='day'
-        className='fixed top-0 left-0 bg-gradient-to-b from-[#1291cb] to-[transparent] w-full h-screen -z-10'
+        className='absolute top-0 left-0 bg-gradient-to-b from-[#1291cb] to-[transparent] w-full h-[90vh] -z-10'
       />
+
       <AnimatePresence mode='popLayout'>
         {!isDark && (
           <motion.div

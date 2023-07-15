@@ -14,7 +14,7 @@ const Header = () => {
   const { isDark, toggleTheme } = useThemeMode()
 
   return (
-    <nav className='-z-40 dark:bg-slate-950 transition-colors'>
+    <nav className='-z-40 bg-[#1291cb] dark:bg-slate-950 transition-colors'>
       <div className='flex px-40 h-[10vh] items-center'>
         <div className='flex-1 flex items-center gap-4'>
           <div className='p-2 bg-gradient-to-br from-orange-500 to-pink-600 rounded-xl'>
@@ -24,6 +24,7 @@ const Header = () => {
         </div>
         <div className='flex justify-center border border-gray-800 rounded-xl transition-colors z-30'>
           <NavBtn>Intro</NavBtn>
+          <NavBtn>Skills</NavBtn>
           <NavBtn>Projects</NavBtn>
           <NavBtn>Contact</NavBtn>
           <NavBtn>Conclusion</NavBtn>
