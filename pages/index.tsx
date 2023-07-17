@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { MdPersonOutline } from 'react-icons/md'
 
-import { Header, Hero, Skills } from '@/src/components/sections'
+import { Header, Hero, Projects, Skills } from '@/src/components/sections'
 import useThemeMode from '@/src/hooks/useThemeMode'
 
 const getStaticPaths = () => {}
@@ -18,9 +18,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Skills />
-        <section className='bg-gradient-to-b from-orange-100 to-white dark:from-slate-900 dark:to-slate-950 min-h-screen'>
-          Next Section
-        </section>
+        <Projects />
       </main>
     </>
   )
