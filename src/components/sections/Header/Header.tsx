@@ -17,17 +17,17 @@ const Header = () => {
     <nav className='-z-40 bg-[#1291cb] dark:bg-slate-950 transition-colors'>
       <div className='flex px-40 h-[10vh] items-center'>
         <div className='flex-1 flex items-center gap-4'>
-          <div className='p-2 bg-gradient-to-br from-orange-500 to-pink-600 rounded-xl'>
-            <MdPersonOutline style={{ fontSize: '25px' }} />
+          <div className='p-2 bg-gradient-to-br from-[#9A4993] to-[#6A1577] rounded-xl'>
+            <MdPersonOutline color='white' style={{ fontSize: '25px' }} />
           </div>
           <h1 className='font-semibold dark:text-white  z-30'>Portfolio</h1>
         </div>
         <div className='flex justify-center border border-gray-800 rounded-xl transition-colors z-30'>
-          <NavBtn>Intro</NavBtn>
-          <NavBtn>Skills</NavBtn>
-          <NavBtn>Projects</NavBtn>
-          <NavBtn>Contact</NavBtn>
-          <NavBtn>Conclusion</NavBtn>
+          <NavBtn href='#intro'>Intro</NavBtn>
+          <NavBtn href='#skills'>Skills</NavBtn>
+          <NavBtn href='#projects'>Projects</NavBtn>
+          <NavBtn href='#'>Contact</NavBtn>
+          <NavBtn href='#'>Conclusion</NavBtn>
         </div>
         <div className='flex-1 flex justify-end items-center gap-5 dark:text-gray-200 transition-colors z-30'>
           <ThemeSwitch isDark={isDark} onChange={toggleTheme} />

@@ -44,8 +44,18 @@ const Hero = () => {
   }
 
   return (
-    <main className='flex w-full justify-center items-center h-[90vh] dark:bg-slate-950 transition-colors relative'>
-      <h1 className='font-fasthand text-7xl dark:text-slate-50'>Hi im Usman</h1>
+    <main
+      id='intro'
+      className='flex w-full justify-center items-center h-[90vh] dark:bg-slate-950 transition-colors relative'
+    >
+      <div className='flex flex-col'>
+        <h1 className='font-fasthand text-center text-7xl dark:text-slate-50'>
+          Hi im Usman
+        </h1>
+        <h3 className='font-fasthand text-center text-3xl dark:text-slate-50'>
+          game & frontend developer
+        </h3>
+      </div>
       <AnimatePresence mode='popLayout'>
         {isDark ? (
           <motion.div
