@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>M. Usman Khilji</title>
       </Head>
-      <main className={`${isDark ? 'dark' : ''} overflow-x-hidden`}>
+      <main className={`${isDark ? 'dark' : ''}`}>
         <Header />
         <Hero />
         <Skills />
