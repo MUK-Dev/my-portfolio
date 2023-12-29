@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { TiArrowRightOutline, TiArrowLeftOutline } from 'react-icons/ti'
 import { AnimatePresence, motion } from 'framer-motion'
+import { encode } from 'blurhash'
+import OptimizedImage from '../../ui/reuseable/OptimizedImage'
 
 interface SlideProps {
   img: string
@@ -8,6 +10,7 @@ interface SlideProps {
   description: string
   learned: string
   skills: string[]
+  blurHash: string
   link?: string
 }
 
@@ -20,6 +23,8 @@ const data: SlideProps[] = [
     learned:
       'I learned Unity animator for 2D, basic logic for gameplay loop, UI, implementing Ads, delivering a finished product.',
     skills: ['Unity', 'Adobe Photoshop', 'Unity Ads'],
+    blurHash:
+      '|5FIm$xr8VK|.Jvi7Gv*.{z^Q[TrpVw1l2Ibr1#m5-ob$PS5TXWY*.nkF@TZt3a$VywcWEW-O,bt%bOXNdz@*+pC7[K^,WxoTpeFVeTZzbtOX#R,HMV_zvocI@o{+OnmPNu0wMVuNuXOOUwJs.W;:=wdFsOprvR*b;rwsW',
     link: 'https://play.google.com/store/apps/details?id=com.MysticCraftz.HomeOwnerClickerDefence&hl=en_US',
   },
   {
@@ -30,6 +35,8 @@ const data: SlideProps[] = [
     learned:
       'I learned Unity layout, C#, OOP concepts, UI, raycasts, animator, Singletons, State Machines, and C# events',
     skills: ['Unity'],
+    blurHash:
+      '|GEVQkRj4nX9%1W-R$ozXTkAWBjZWXozjYW.oJWX0KWYX7ocxuRkWYaKi^%2kCoboesSR.V[WYs+yse.VXbIofofxCX8bIIUoItRRlbIocobj@R.WBt6ofWBflWBWUayf6IokCs:j?WBa~a~azoIvzWEbwoeWBj]R.oKj?',
   },
   {
     img: '/assets/projects/Survival Game.png',
@@ -39,12 +46,26 @@ const data: SlideProps[] = [
     learned:
       'I learned different types of raycasts(box, capsule, circle etc), Unity New Input System,NavMesh, AI, Character rigs, Animator for 3D characters, Animation Layers, Inventory System, Detecting objects near player, Drag and drop UI, AI state machines, Using pre made assets',
     skills: ['Unity', 'Blender'],
+    blurHash:
+      '|684iB$%00-V-UIpI:odoe4U=}~CIUELoyt7NbR*vyn4xI$*t7R+IpWqt7-6rWRj%NnPRjtRbFRPrX-Av}IUpJtQM{WCt7$$v~w{wHM_T0tRWBRj$OxGnisDwcNFOXkWogw|w|xabHWCnhjFS#SfxGxGsBs:X8S#aenif+',
     link: 'https://play.unity.com/mg/other/survival-game-build-webgl',
   },
 ]
 
 const Projects = () => {
   const [index, setIndex] = useState(0)
+
+  const handleNext = () => {
+    let newIndex = index + 1
+    if (newIndex >= data.length) newIndex = 0
+    setIndex(newIndex)
+  }
+
+  const handlePrevious = () => {
+    let newIndex = index - 1
+    if (newIndex < 0) newIndex = data.length - 1
+    setIndex(newIndex)
+  }
 
   const makeSlide = (data: SlideProps) => {
     return (
@@ -53,9 +74,9 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='flex-1 min-w-0 relative max-h-[85vh] overflow-hidden rounded-xl'
+        className='flex-1 min-w-0 relative max-h-[85vh] w-full overflow-hidden rounded-xl'
       >
-        <img src={data.img} alt={data.img} className='w-full' />
+        <OptimizedImage image={{ src: data.img, blurhash: data.blurHash }} />
         <div className='flex flex-col justify-center items-start gap-3 px-10 text-black dark:text-white h-full w-1/3 absolute top-0 left-0 bg-gradient-to-b from-[#FFEDD5ca] dark:from-[#0f172aca] to-[#d7f1f7ca] dark:to-[#0f262aca]'>
           <h3 className='font-fasthand text-5xl'>{data.title}</h3>
           <p className='text-xl'>{data.description}</p>
@@ -87,18 +108,6 @@ const Projects = () => {
     )
   }
 
-  const handleNext = () => {
-    let newIndex = index + 1
-    if (newIndex >= data.length) newIndex = 0
-    setIndex(newIndex)
-  }
-
-  const handlePrevious = () => {
-    let newIndex = index - 1
-    if (newIndex < 0) newIndex = data.length - 1
-    setIndex(newIndex)
-  }
-
   return (
     <section
       id='projects'
@@ -111,7 +120,9 @@ const Projects = () => {
         <button className='w-10 h-10' onClick={handlePrevious}>
           <TiArrowLeftOutline className='w-10 h-10 dark:text-white' />
         </button>
-        <AnimatePresence mode='wait'>{makeSlide(data[index])}</AnimatePresence>
+        <AnimatePresence mode='popLayout'>
+          {makeSlide(data[index])}
+        </AnimatePresence>
         <button className='w-10 h-10' onClick={handleNext}>
           <TiArrowRightOutline className='w-10 h-10 dark:text-white' />
         </button>
