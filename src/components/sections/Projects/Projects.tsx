@@ -74,10 +74,10 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='flex-1 min-w-0 relative max-h-[85vh] w-full overflow-hidden rounded-xl'
+        className='flex-grow-1 min-w-0 relative h-full w-full overflow-hidden rounded-xl'
       >
         <OptimizedImage image={{ src: data.img, blurhash: data.blurHash }} />
-        <div className='flex flex-col justify-center items-start gap-3 px-10 text-black dark:text-white h-full w-1/3 absolute top-0 left-0 bg-gradient-to-b from-[#FFEDD5ca] dark:from-[#0f172aca] to-[#d7f1f7ca] dark:to-[#0f262aca]'>
+        <div className='flex flex-col justify-center items-start z-50 gap-3 px-10 text-black dark:text-white h-full w-1/3 absolute top-0 left-0 bg-gradient-to-b from-[#FFEDD5ca] dark:from-[#0f172aca] to-[#d7f1f7ca] dark:to-[#0f262aca]'>
           <h3 className='font-fasthand text-5xl'>{data.title}</h3>
           <p className='text-xl'>{data.description}</p>
           <p className='text-xl'>{data.learned}</p>
@@ -116,7 +116,7 @@ const Projects = () => {
       <h2 className='font-fasthand text-7xl pb-10 dark:text-slate-50 z-50'>
         Projects
       </h2>
-      <div className='flex items-center gap-10'>
+      <div className='flex items-center w-full h-[85vh] gap-10'>
         <button className='w-10 h-10' onClick={handlePrevious}>
           <TiArrowLeftOutline className='w-10 h-10 dark:text-white' />
         </button>

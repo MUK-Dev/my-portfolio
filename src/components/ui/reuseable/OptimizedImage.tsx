@@ -13,6 +13,8 @@ function OptimizedImage(props: IOptimizedImageProps) {
   const [isLoadStarted, setLoadStarted] = useState(false)
 
   const handleLoad = () => {
+    console.log('triggered')
+
     setLoaded(true)
   }
 
@@ -25,18 +27,17 @@ function OptimizedImage(props: IOptimizedImageProps) {
       <LazyLoadImage
         key={image.blurhash}
         src={image.src}
-        height='100%'
-        width='100%'
         onLoad={handleLoad}
         beforeLoad={handleLoadStarted}
+        className='absolute top-0 left-0 z-0'
       />
       {!isLoaded && isLoadStarted && (
         <Blurhash
           hash={image.blurhash}
-          width='100%'
-          height='100%'
-          resolutionX={32}
-          resolutionY={32}
+          width='1920px'
+          height='1080px'
+          resolutionX={64}
+          resolutionY={64}
           punch={1}
           className='absolute top-0 left-0 z-20'
         />
