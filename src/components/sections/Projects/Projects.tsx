@@ -3,8 +3,10 @@ import { TiArrowRightOutline, TiArrowLeftOutline } from 'react-icons/ti'
 import { AnimatePresence, motion } from 'framer-motion'
 import { encode } from 'blurhash'
 import OptimizedImage from '../../ui/reuseable/OptimizedImage'
+import getProjectsData from '@/src/services/getProjectsData'
 
 interface SlideProps {
+  type: 'GAME' | 'WEB'
   img: string
   title: string
   description: string
@@ -14,56 +16,26 @@ interface SlideProps {
   link?: string
 }
 
-const data: SlideProps[] = [
-  {
-    img: '/assets/projects/HOME OWNER.png',
-    title: 'HOME OWNER',
-    description:
-      'My first published mobile game. This is a casual mobile game good for passing time. You defend your home from endless waves of animals.',
-    learned:
-      'I learned Unity animator for 2D, basic logic for gameplay loop, UI, implementing Ads, delivering a finished product.',
-    skills: ['Unity', 'Adobe Photoshop', 'Unity Ads'],
-    blurHash:
-      '|5FIm$xr8VK|.Jvi7Gv*.{z^Q[TrpVw1l2Ibr1#m5-ob$PS5TXWY*.nkF@TZt3a$VywcWEW-O,bt%bOXNdz@*+pC7[K^,WxoTpeFVeTZzbtOX#R,HMV_zvocI@o{+OnmPNu0wMVuNuXOOUwJs.W;:=wdFsOprvR*b;rwsW',
-    link: 'https://play.google.com/store/apps/details?id=com.MysticCraftz.HomeOwnerClickerDefence&hl=en_US',
-  },
-  {
-    img: '/assets/projects/Kitchen Chaos.png',
-    title: 'Kitchen Chaos',
-    description:
-      'This was my first game made with Unity. It is a cooking game where you prepare and deliver recipies. Made by following the Unity Course from Code Monkey on Youtube.',
-    learned:
-      'I learned Unity layout, C#, OOP concepts, UI, raycasts, animator, Singletons, State Machines, and C# events',
-    skills: ['Unity'],
-    blurHash:
-      '|GEVQkRj4nX9%1W-R$ozXTkAWBjZWXozjYW.oJWX0KWYX7ocxuRkWYaKi^%2kCoboesSR.V[WYs+yse.VXbIofofxCX8bIIUoItRRlbIocobj@R.WBt6ofWBflWBWUayf6IokCs:j?WBa~a~azoIvzWEbwoeWBj]R.oKj?',
-  },
-  {
-    img: '/assets/projects/Survival Game.png',
-    title: 'Survival Game',
-    description:
-      'I made this game as the capstone project for my Unity Game Development bootcamp at Game Train. I made many system all by myself with as little help as I could from youtube videos by lots of trial and error.',
-    learned:
-      'I learned different types of raycasts(box, capsule, circle etc), Unity New Input System,NavMesh, AI, Character rigs, Animator for 3D characters, Animation Layers, Inventory System, Detecting objects near player, Drag and drop UI, AI state machines, Using pre made assets',
-    skills: ['Unity', 'Blender'],
-    blurHash:
-      '|684iB$%00-V-UIpI:odoe4U=}~CIUELoyt7NbR*vyn4xI$*t7R+IpWqt7-6rWRj%NnPRjtRbFRPrX-Av}IUpJtQM{WCt7$$v~w{wHM_T0tRWBRj$OxGnisDwcNFOXkWogw|w|xabHWCnhjFS#SfxGxGsBs:X8S#aenif+',
-    link: 'https://play.unity.com/mg/other/survival-game-build-webgl',
-  },
-]
-
 const Projects = () => {
   const [index, setIndex] = useState(0)
+  const [filters, setFilters] = useState<string[]>([])
+
+  const data = getProjectsData<SlideProps[]>()
+
+  const filteredData = data.filter(d => {
+    if (filters.length <= 0) return true
+    if (filters.includes(d.type)) return true
+  })
 
   const handleNext = () => {
     let newIndex = index + 1
-    if (newIndex >= data.length) newIndex = 0
+    if (newIndex >= filteredData.length) newIndex = 0
     setIndex(newIndex)
   }
 
   const handlePrevious = () => {
     let newIndex = index - 1
-    if (newIndex < 0) newIndex = data.length - 1
+    if (newIndex < 0) newIndex = filteredData.length - 1
     setIndex(newIndex)
   }
 
@@ -78,6 +50,9 @@ const Projects = () => {
       >
         <OptimizedImage image={{ src: data.img, blurhash: data.blurHash }} />
         <div className='flex flex-col justify-center items-start z-50 gap-3 px-10 text-black dark:text-white h-full w-1/3 absolute top-0 left-0 bg-gradient-to-b from-[#FFEDD5ca] dark:from-[#0f172aca] to-[#d7f1f7ca] dark:to-[#0f262aca]'>
+          <h4 className='font-fasthand px-4 py-2 bg-amber-100 dark:bg-slate-700 text-center rounded-full'>
+            {data.type}
+          </h4>
           <h3 className='font-fasthand text-5xl'>{data.title}</h3>
           <p className='text-xl'>{data.description}</p>
           <p className='text-xl'>{data.learned}</p>
@@ -108,20 +83,53 @@ const Projects = () => {
     )
   }
 
+  const addFilter = (type: 'GAME' | 'WEB') => {
+    if (filters.includes(type)) {
+      setFilters(prev => prev.filter(d => d !== type))
+      setIndex(0)
+    } else {
+      const newArray = [...filters]
+      newArray.push(type)
+      setFilters(newArray)
+      setIndex(0)
+    }
+  }
+
   return (
     <section
       id='projects'
       className='bg-gradient-to-b px-3 from-orange-100 to-white dark:from-slate-900 dark:to-slate-950 min-h-screen pb-5 transition-colors flex flex-col items-center'
     >
-      <h2 className='font-fasthand text-7xl pb-10 dark:text-slate-50 z-50'>
-        Projects
+      <h2 className='font-fasthand text-7xl pb-7 dark:text-slate-50 z-50'>
+        Projects: {filteredData.length}
       </h2>
-      <div className='flex items-center w-full h-[85vh] gap-10'>
+      <h3 className='font-fasthand text-4xl pb-2 dark:text-slate-50 z-50'>
+        Filters
+      </h3>
+      <div className='flex gap-3 pb-2'>
+        <button
+          className={`px-4 py-2 border border-amber-300 dark:border-slate-700 ${
+            filters.includes('WEB') ? 'bg-amber-300 dark:bg-slate-700' : ''
+          } text-center dark:text-white rounded-full`}
+          onClick={() => addFilter('WEB')}
+        >
+          WEB
+        </button>
+        <button
+          className={`px-4 py-2 border border-amber-300 dark:border-slate-700 ${
+            filters.includes('GAME') ? 'bg-amber-300 dark:bg-slate-700' : ''
+          } text-center dark:text-white rounded-full`}
+          onClick={() => addFilter('GAME')}
+        >
+          GAME
+        </button>
+      </div>
+      <div className='flex items-center w-full h-[85vh] gap-3'>
         <button className='w-10 h-10' onClick={handlePrevious}>
           <TiArrowLeftOutline className='w-10 h-10 dark:text-white' />
         </button>
         <AnimatePresence mode='popLayout'>
-          {makeSlide(data[index])}
+          {makeSlide(filteredData[index])}
         </AnimatePresence>
         <button className='w-10 h-10' onClick={handleNext}>
           <TiArrowRightOutline className='w-10 h-10 dark:text-white' />
