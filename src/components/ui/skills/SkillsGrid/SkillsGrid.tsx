@@ -26,25 +26,8 @@ const skillsData = [
 
 const SkillsGrid = () => {
   const { isDark } = useThemeMode()
-  //   const makeGrid = (): string[][] => {
-  //     const result: string[][] = []
-  //     let lowerLimit = 0
-  //     let upperLimit = 1
-  //     let numberToAdd = 2
 
-  //     while (numberToAdd < skillsData.length) {
-  //       console.log(`L: ${lowerLimit} U: ${upperLimit}`)
-
-  //       result.push(skillsData.slice(lowerLimit, upperLimit))
-  //       lowerLimit = upperLimit
-  //       upperLimit += numberToAdd
-  //       numberToAdd++
-  //     }
-
-  //     return result
-  //   }
-
-  const imageClasses = `h-20 ${isDark ? 'invert' : 'invert-0'}`
+  const imageClasses = `h-16 sm:h-20 ${isDark ? 'invert' : 'invert-0'}`
 
   return (
     <div className='z-30 pt-5'>

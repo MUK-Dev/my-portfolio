@@ -98,15 +98,18 @@ const Projects = () => {
   return (
     <section
       id='projects'
-      className='bg-gradient-to-b px-3 from-orange-100 to-white dark:from-slate-900 dark:to-slate-950 min-h-screen pb-5 transition-colors flex flex-col items-center'
+      className='bg-gradient-to-b px-3 from-orange-100 to-white dark:from-slate-900 dark:to-slate-950 pb-16 transition-colors flex flex-col items-center'
     >
       <h2 className='font-fasthand text-7xl pb-7 dark:text-slate-50 z-50'>
         Projects: {filteredData.length}
       </h2>
-      <h3 className='font-fasthand text-4xl pb-2 dark:text-slate-50 z-50'>
+      <h2 className='block 2xl:hidden text-xl pb-7 dark:text-slate-50 z-50'>
+        Section only available on desktop
+      </h2>
+      <h3 className='hidden 2xl:block font-fasthand text-4xl pb-2 dark:text-slate-50 z-50'>
         Filters
       </h3>
-      <div className='flex gap-3 pb-2'>
+      <div className='hidden 2xl:flex  gap-3 pb-2'>
         <button
           className={`px-4 py-2 border border-amber-300 dark:border-slate-700 ${
             filters.includes('WEB') ? 'bg-amber-300 dark:bg-slate-700' : ''
@@ -124,7 +127,7 @@ const Projects = () => {
           GAME
         </button>
       </div>
-      <div className='flex items-center w-full h-[85vh] gap-3'>
+      <div className='hidden 2xl:flex items-center w-full h-[85vh] gap-3'>
         <button className='w-10 h-10' onClick={handlePrevious}>
           <TiArrowLeftOutline className='w-10 h-10 dark:text-white' />
         </button>

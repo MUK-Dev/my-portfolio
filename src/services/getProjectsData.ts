@@ -164,6 +164,7 @@ export default function getProjectsData<T>(): T {
         'I learned to guide and lead the team to finish milestones, and we implemented complete custom made dashboard, role based authentication(Student, Teacher, Parent, Admin), attendance system, result system, reports generation system.',
       skills: [
         'React',
+        'react-query',
         'MUI',
         'Framer Motion',
         'Apex Charts',
