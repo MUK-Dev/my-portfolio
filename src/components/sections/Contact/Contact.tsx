@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='p-5 min-h-screen max-h-screen bg-white dark:bg-slate-950 overflow-hidden w-full relative'
+      className='p-5 min-h-screen max-h-screen md:min-h-[80vh] bg-white dark:bg-slate-950 overflow-hidden w-full relative'
     >
       <h2 className='font-fasthand text-center text-7xl pb-[10rem] dark:text-slate-50 z-50'>
         Contact
