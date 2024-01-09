@@ -33,6 +33,7 @@ const ParticleSystem: FC<Props> = ({ isInView, invert = false }) => {
     <>
       {data.map((img, i) => {
         const RANDOM_IMAGE_DIMENSIONS = Math.floor(Math.random() * 75)
+        const INITIAL_AND_EXIT_VALUE = 100 + Math.floor(Math.random() * 500)
         return (
           <motion.img
             key={i}
@@ -45,7 +46,8 @@ const ParticleSystem: FC<Props> = ({ isInView, invert = false }) => {
               isInView
                 ? {
                     x: 0,
-                    y: 100 + Math.floor(Math.random() * 500),
+                    y: INITIAL_AND_EXIT_VALUE,
+                    opacity: 1,
                   }
                 : {}
             }
@@ -54,6 +56,15 @@ const ParticleSystem: FC<Props> = ({ isInView, invert = false }) => {
                 ? {
                     x: 200 + Math.floor(Math.random() * 800),
                     y: -500 + Math.floor(Math.random() * 800),
+                    opacity: 0,
+                  }
+                : {}
+            }
+            exit={
+              isInView
+                ? {
+                    x: 0,
+                    y: INITIAL_AND_EXIT_VALUE,
                     opacity: 0,
                   }
                 : {}
