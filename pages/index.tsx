@@ -1,6 +1,12 @@
 import Head from 'next/head'
 
-import { Header, Hero, Projects, Skills } from '@/src/components/sections'
+import {
+  Contact,
+  Header,
+  Hero,
+  Projects,
+  Skills,
+} from '@/src/components/sections'
 import useThemeMode from '@/src/hooks/useThemeMode'
 
 export default function Home() {
@@ -11,11 +17,12 @@ export default function Home() {
       <Head>
         <title>M. Usman Khilji</title>
       </Head>
-      <main className={`${isDark ? 'dark' : ''} overflow-x-hidden`}>
+      <main className={`${isDark ? 'dark' : ''}`}>
         <Header />
         <Hero />
         <Skills />
         <Projects />
+        <Contact />
       </main>
     </>
   )

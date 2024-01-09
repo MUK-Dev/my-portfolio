@@ -29,93 +29,64 @@ interface Props {
 }
 
 const ParticleSystem: FC<Props> = ({ isInView, invert = false }) => {
-  return invert ? (
+  return (
     <>
-      {data.map((img, i) => {
-        const RANDOM_IMAGE_DIMENSIONS = Math.floor(Math.random() * 75)
-        const INITIAL_AND_EXIT_VALUE = 100 + Math.floor(Math.random() * 500)
-        return (
-          <motion.img
-            key={i}
-            src={img}
-            alt={img}
-            width={75 + RANDOM_IMAGE_DIMENSIONS}
-            height={75 + RANDOM_IMAGE_DIMENSIONS}
-            className='absolute -left-40'
-            initial={
-              isInView
-                ? {
-                    x: 0,
-                    y: INITIAL_AND_EXIT_VALUE,
-                    opacity: 1,
-                  }
-                : {}
-            }
-            animate={
-              isInView
-                ? {
-                    x: 200 + Math.floor(Math.random() * 800),
-                    y: -500 + Math.floor(Math.random() * 800),
-                    opacity: 0,
-                  }
-                : {}
-            }
-            exit={
-              isInView
-                ? {
-                    x: 0,
-                    y: INITIAL_AND_EXIT_VALUE,
-                    opacity: 0,
-                  }
-                : {}
-            }
-            transition={{
-              repeat: Infinity,
-              duration: Math.ceil(Math.random() * 3) + 1,
-              delay: 0.1 + Math.random() * i,
-            }}
-          />
-        )
-      })}
+      {data.map((img, i) => (
+        <Particle
+          img={img}
+          index={i}
+          inverted={invert}
+          isInView={isInView}
+          key={i}
+        />
+      ))}
     </>
-  ) : (
-    <>
-      {data.map((img, i) => {
-        const RANDOM_IMAGE_DIMENSIONS = Math.floor(Math.random() * 75)
-        return (
-          <motion.img
-            key={i}
-            src={img}
-            alt={img}
-            width={75 + RANDOM_IMAGE_DIMENSIONS}
-            height={75 + RANDOM_IMAGE_DIMENSIONS}
-            className='absolute -right-40'
-            initial={
-              isInView
-                ? {
-                    x: 0,
-                    y: 100 + Math.floor(Math.random() * 500),
-                  }
-                : {}
+  )
+}
+
+interface ParticleProps {
+  img: string
+  isInView: boolean
+  index: number
+  inverted: boolean
+}
+
+const Particle: FC<ParticleProps> = ({ index, img, isInView, inverted }) => {
+  const id = useId()
+  const RANDOM_IMAGE_DIMENSIONS = Math.floor(Math.random() * 75)
+  return (
+    <motion.img
+      key={id}
+      src={img}
+      alt={img}
+      width={75 + RANDOM_IMAGE_DIMENSIONS}
+      height={75 + RANDOM_IMAGE_DIMENSIONS}
+      className={`absolute ${inverted ? '-left-40' : '-right-40'}`}
+      initial={
+        isInView
+          ? {
+              x: 0,
+              y: 100 + Math.floor(Math.random() * 500),
             }
-            animate={
-              isInView
-                ? {
-                    x: -1 * (200 + Math.floor(Math.random() * 800)),
-                    y: -500 + Math.floor(Math.random() * 800),
-                    opacity: 0,
-                  }
-                : {}
+          : {}
+      }
+      animate={
+        isInView
+          ? {
+              x: inverted
+                ? 200 + Math.floor(Math.random() * 800)
+                : -1 * (200 + Math.floor(Math.random() * 800)),
+              y: -500 + Math.floor(Math.random() * 800),
+              opacity: 0,
             }
-            transition={{
-              repeat: Infinity,
-              duration: Math.ceil(Math.random() * 3) + 1,
-              delay: 0.1 + Math.random() * i,
-            }}
-          />
-        )
-      })}
-    </>
+          : {}
+      }
+      transition={{
+        repeat: Infinity,
+        duration: Math.ceil(Math.random() * 3) + 1,
+        delay: 0.1 + Math.random() * index,
+      }}
+    />
   )
 }
 
