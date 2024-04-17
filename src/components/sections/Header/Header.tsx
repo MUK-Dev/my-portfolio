@@ -7,7 +7,7 @@ import useThemeMode from '@/src/hooks/useThemeMode'
 
 const GITHUB_LINK = 'https://github.com/MUK-Dev'
 const UPWORK_LINK = 'https://www.upwork.com/freelancers/~015dfb967e68c8adec'
-const LINKEDIN_LINK = 'https://www.linkedin.com/in/muk-dev/'
+const LINKEDIN_LINK = 'https://www.linkedin.com/in/m-usman-khilji/'
 const YOUTUBE_LINK = 'https://www.youtube.com/channel/UCWdnFCZ3L5di3EMFksP8Y_g'
 
 const Header = () => {
