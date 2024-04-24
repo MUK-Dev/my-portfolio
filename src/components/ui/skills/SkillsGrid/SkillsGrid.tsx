@@ -1,27 +1,28 @@
+/* eslint-disable @next/next/no-img-element */
 import useThemeMode from '@/src/hooks/useThemeMode'
 
 const skillsData = [
-  '/assets/skills/csharp.png',
-  '/assets/skills/cpp.png',
-  '/assets/skills/unity.png',
+  '/assets/skills/react.png',
   '/assets/skills/JS.png',
   '/assets/skills/TS.png',
+  '/assets/skills/tailwindcss.png',
+  '/assets/skills/nextjs.png',
+  '/assets/skills/git.png',
+  '/assets/skills/nestjs.png',
   '/assets/skills/mongodb.png',
-  '/assets/skills/blender.png',
   '/assets/skills/nodejs.png',
-  '/assets/skills/react.png',
-  //   '/assets/skills/git.png',
+  // '/assets/skills/csharp.png',
+  // '/assets/skills/cpp.png',
+  // '/assets/skills/unity.png',
+  // '/assets/skills/blender.png',
   //   '/assets/skills/firebase.png',
   //   '/assets/skills/framer-motion.png',
   //   '/assets/skills/github.png',
   //   '/assets/skills/mui.png',
-  //   '/assets/skills/nestjs.png',
-  //   '/assets/skills/nextjs.png',
   //   '/assets/skills/npm.png',
   //   '/assets/skills/react-query.png',
   //   '/assets/skills/sass.png',
   //   '/assets/skills/swagger.png',
-  //   '/assets/skills/tailwindcss.png',
 ]
 
 const SkillsGrid = () => {

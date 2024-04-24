@@ -13,8 +13,6 @@ function OptimizedImage(props: IOptimizedImageProps) {
   const [isLoadStarted, setLoadStarted] = useState(false)
 
   const handleLoad = () => {
-    console.log('triggered')
-
     setLoaded(true)
   }
 

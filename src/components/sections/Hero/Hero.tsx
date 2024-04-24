@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import useThemeMode from '@/src/hooks/useThemeMode'
 import { Clouds } from '../../ui/hero'
+import AnimatedImage from '../../ui/reuseable/AnimatedImage'
 
 const Hero = () => {
   const { isDark } = useThemeMode()
@@ -148,6 +149,42 @@ const Hero = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <AnimatedImage
+        images={[
+          '/assets/animatedImages/bird/frame-1.png',
+          '/assets/animatedImages/bird/frame-2.png',
+          '/assets/animatedImages/bird/frame-3.png',
+          '/assets/animatedImages/bird/frame-4.png',
+          '/assets/animatedImages/bird/frame-5.png',
+          '/assets/animatedImages/bird/frame-6.png',
+          '/assets/animatedImages/bird/frame-7.png',
+          '/assets/animatedImages/bird/frame-8.png',
+        ]}
+        width={100}
+        height={100}
+        position={{
+          top: '2rem',
+          left: '10%',
+        }}
+        duration={50}
+      />
+      <AnimatedImage
+        images={[
+          '/assets/animatedImages/dragon/frame-1.png',
+          '/assets/animatedImages/dragon/frame-2.png',
+          '/assets/animatedImages/dragon/frame-3.png',
+          '/assets/animatedImages/dragon/frame-4.png',
+        ]}
+        width={100}
+        height={100}
+        position={{
+          bottom: '10rem',
+          right: '10%',
+        }}
+        duration={50}
+        invert
+      />
     </main>
   )
 }

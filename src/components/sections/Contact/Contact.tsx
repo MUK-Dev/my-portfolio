@@ -40,7 +40,7 @@ const Contact = () => {
             <p>Upwork</p>
           </a>
           <a
-            href='https://www.linkedin.com/in/muk-dev/'
+            href='https://www.linkedin.com/in/m-usman-khilji/'
             className='flex gap-3 items-center'
             target='_blank'
           >
