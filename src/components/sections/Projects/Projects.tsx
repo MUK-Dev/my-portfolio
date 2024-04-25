@@ -22,7 +22,7 @@ const Projects = () => {
 
   const data = getProjectsData<SlideProps[]>()
 
-  const filteredData = data.filter(d => {
+  const filteredData = data.filter((d) => {
     if (filters.length <= 0) return true
     if (filters.includes(d.type)) return true
   })
@@ -85,7 +85,7 @@ const Projects = () => {
 
   const addFilter = (type: 'GAME' | 'WEB') => {
     if (filters.includes(type)) {
-      setFilters(prev => prev.filter(d => d !== type))
+      setFilters((prev) => prev.filter((d) => d !== type))
       setIndex(0)
     } else {
       const newArray = [...filters]
@@ -106,7 +106,7 @@ const Projects = () => {
       <h2 className='block 2xl:hidden text-xl pb-7 dark:text-slate-50 z-50'>
         Section only available on desktop
       </h2>
-      <h3 className='hidden 2xl:block font-fasthand text-4xl pb-2 dark:text-slate-50 z-50'>
+      {/* <h3 className='hidden 2xl:block font-fasthand text-4xl pb-2 dark:text-slate-50 z-50'>
         Filters
       </h3>
       <div className='hidden 2xl:flex  gap-3 pb-2'>
@@ -126,7 +126,7 @@ const Projects = () => {
         >
           GAME
         </button>
-      </div>
+      </div> */}
       <div className='hidden 2xl:flex items-center w-full h-[85vh] gap-3'>
         <button className='w-10 h-10' onClick={handlePrevious}>
           <TiArrowLeftOutline className='w-10 h-10 dark:text-white' />

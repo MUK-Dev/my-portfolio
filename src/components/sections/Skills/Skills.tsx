@@ -9,6 +9,7 @@ const Skills = () => {
     >
       <h2 className='font-fasthand text-7xl dark:text-slate-50 z-50'>Skills</h2>
       <SkillsGrid />
+      {/* Leapord animation */}
       <AnimatedImage
         images={[
           '/assets/animatedImages/leapord/Leapord1.png',
@@ -16,12 +17,10 @@ const Skills = () => {
         ]}
         width={100}
         height={100}
-        position={{
-          bottom: '25rem',
-          right: '30rem',
-        }}
-        rotation='rotate(45deg)'
+        rotation='rotate(35deg)'
+        className='right-8 top-16 md:w-[100px] w-16'
       />
+      {/* Fox animation */}
       <AnimatedImage
         images={[
           '/assets/animatedImages/fox/Fox1.png',
@@ -29,12 +28,10 @@ const Skills = () => {
         ]}
         width={100}
         height={100}
-        position={{
-          top: '7rem',
-          left: '30rem',
-        }}
         rotation='rotate(-45deg)'
+        className='left-7 top-10 md:w-[100px] w-16'
       />
+      {/* Beetle animation */}
       <AnimatedImage
         images={[
           '/assets/animatedImages/beetle/Sprite-0002.png',
@@ -53,7 +50,7 @@ const Skills = () => {
           bottom: '3rem',
           left: '39%',
         }}
-        customClasses='z-[200]'
+        className='z-[200] '
       />
       <Waves />
     </section>

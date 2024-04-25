@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { MdMailOutline } from 'react-icons/md'
 import { RotatingCircle } from '../../ui/contact'
 import { FiGithub, FiYoutube } from 'react-icons/fi'
@@ -20,7 +21,13 @@ const Contact = () => {
             className='flex gap-3 items-center'
             target='_blank'
           >
-            <MdMailOutline style={{ fontSize: '20px' }} />
+            <motion.div
+              whileHover={{
+                rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+              }}
+            >
+              <MdMailOutline style={{ fontSize: '20px' }} />
+            </motion.div>
             <p>Zafarusman935@gmail.com</p>
           </a>
           <a
@@ -28,7 +35,13 @@ const Contact = () => {
             className='flex gap-3 items-center'
             target='_blank'
           >
-            <FiGithub style={{ fontSize: '20px' }} />
+            <motion.div
+              whileHover={{
+                rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+              }}
+            >
+              <FiGithub style={{ fontSize: '20px' }} />
+            </motion.div>
             <p>Github</p>
           </a>
           <a
@@ -36,7 +49,13 @@ const Contact = () => {
             className='flex gap-3 items-center'
             target='_blank'
           >
-            <BiLogoUpwork style={{ fontSize: '25px' }} />
+            <motion.div
+              whileHover={{
+                rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+              }}
+            >
+              <BiLogoUpwork style={{ fontSize: '25px' }} />
+            </motion.div>
             <p>Upwork</p>
           </a>
           <a
@@ -44,7 +63,13 @@ const Contact = () => {
             className='flex gap-3 items-center'
             target='_blank'
           >
-            <BiLogoLinkedin style={{ fontSize: '20px' }} />
+            <motion.div
+              whileHover={{
+                rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+              }}
+            >
+              <BiLogoLinkedin style={{ fontSize: '20px' }} />
+            </motion.div>
             <p>LinkedIn</p>
           </a>
           <a
@@ -52,7 +77,13 @@ const Contact = () => {
             className='flex gap-3 items-center'
             target='_blank'
           >
-            <FiYoutube style={{ fontSize: '20px' }} />
+            <motion.div
+              whileHover={{
+                rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+              }}
+            >
+              <FiYoutube style={{ fontSize: '20px' }} />
+            </motion.div>
             <p>Youtube</p>
           </a>
         </div>

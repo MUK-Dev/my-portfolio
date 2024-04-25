@@ -54,7 +54,7 @@ const Hero = () => {
           Hi im Usman
         </h1>
         <h3 className='font-fasthand text-center text-3xl md:text-3xl dark:text-slate-50'>
-          game & frontend developer
+          full stack developer
         </h3>
       </div>
       <AnimatePresence mode='popLayout'>

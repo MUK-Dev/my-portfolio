@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react'
 
 interface AnimatedImageProps {
   images: string[]
-  position: {
+  position?: {
     top?: string | number
     left?: string | number
     right?: string | number
@@ -13,7 +13,7 @@ interface AnimatedImageProps {
   duration?: number
   width: number | `${number}` | undefined
   height: number | `${number}` | undefined
-  customClasses?: string
+  className?: string | undefined
   rotation?: string
   invert?: boolean
 }
@@ -24,7 +24,7 @@ const AnimatedImage: FC<AnimatedImageProps> = ({
   duration = 200,
   height,
   width,
-  customClasses,
+  className,
   rotation,
   invert = false,
 }) => {
@@ -33,7 +33,6 @@ const AnimatedImage: FC<AnimatedImageProps> = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log(currentImageIndex)
       const newIndex = (currentImageIndex + 1) % images.length
       setCurrentImageIndex(newIndex)
     }, duration)
@@ -50,7 +49,7 @@ const AnimatedImage: FC<AnimatedImageProps> = ({
       style={{ ...position, transform: rotation }}
       width={width}
       height={height}
-      className={`${customClasses} absolute ${invert ? 'scale-x-[-1]' : ''} ${
+      className={`${className} absolute ${invert ? 'scale-x-[-1]' : ''} ${
         isDark ? 'invert transition-all' : ''
       }`}
     />

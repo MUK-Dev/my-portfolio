@@ -1,6 +1,7 @@
 import { MdPersonOutline } from 'react-icons/md'
 import { FiGithub, FiYoutube } from 'react-icons/fi'
 import { BiLogoUpwork, BiLogoLinkedin } from 'react-icons/bi'
+import { motion } from 'framer-motion'
 import { Drawer, NavBtn, ThemeSwitch } from '../../ui/header'
 import Link from 'next/link'
 import useThemeMode from '@/src/hooks/useThemeMode'
@@ -15,7 +16,7 @@ const Header = () => {
 
   return (
     <nav className='-z-40 bg-[#1291cb] dark:bg-slate-950 transition-colors'>
-      <div className='flex px-3 md:px-40 h-[10vh] items-center'>
+      <div className='flex px-3 md:px-16 xl:px-40 gap-4 h-[10vh] items-center'>
         <div className='flex-1 flex items-center gap-4'>
           <div className='p-2 bg-gradient-to-br from-[#9A4993] to-[#6A1577] rounded-xl'>
             <MdPersonOutline color='white' style={{ fontSize: '25px' }} />
@@ -31,18 +32,42 @@ const Header = () => {
         </div>
         <div className='flex-1 hidden md:flex justify-end items-center gap-5 dark:text-gray-200 transition-colors z-30'>
           <ThemeSwitch isDark={isDark} onChange={toggleTheme} />
-          <Link href={GITHUB_LINK} target='_blank'>
-            <FiGithub style={{ fontSize: '20px' }} />
-          </Link>
-          <Link href={UPWORK_LINK} target='_blank'>
-            <BiLogoUpwork style={{ fontSize: '25px' }} />
-          </Link>
-          <Link href={LINKEDIN_LINK} target='_blank'>
-            <BiLogoLinkedin style={{ fontSize: '20px' }} />
-          </Link>
-          <Link href={YOUTUBE_LINK} target='_blank'>
-            <FiYoutube style={{ fontSize: '20px' }} />
-          </Link>
+          <motion.div
+            whileHover={{
+              rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+            }}
+          >
+            <Link href={GITHUB_LINK} target='_blank'>
+              <FiGithub style={{ fontSize: '20px' }} />
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+            }}
+          >
+            <Link href={UPWORK_LINK} target='_blank'>
+              <BiLogoUpwork style={{ fontSize: '25px' }} />
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+            }}
+          >
+            <Link href={LINKEDIN_LINK} target='_blank'>
+              <BiLogoLinkedin style={{ fontSize: '20px' }} />
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              rotate: ['0deg', '35deg', '-35deg', '35deg', '-35deg', '0deg'],
+            }}
+          >
+            <Link href={YOUTUBE_LINK} target='_blank'>
+              <FiYoutube style={{ fontSize: '20px' }} />
+            </Link>
+          </motion.div>
         </div>
         <div className='md:flex-1 flex md:hidden z-50'>
           <Drawer />
