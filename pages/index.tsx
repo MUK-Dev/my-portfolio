@@ -5,6 +5,7 @@ import {
   Header,
   Hero,
   Projects,
+  Reviews,
   Skills,
 } from '@/src/components/sections'
 import useThemeMode from '@/src/hooks/useThemeMode'
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Projects />
+        <Reviews />
         <Contact />
       </main>
     </>

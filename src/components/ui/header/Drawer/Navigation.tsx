@@ -54,7 +54,7 @@ export const Navigation = ({
       // transition={{ delay: 0.2 }}
       animate={isOpen ? 'open' : 'closed'}
     >
-      {itemIds.map(i => (
+      {itemIds.map((i) => (
         <MenuItem i={i} key={i} isOpen={isOpen} toggle={toggle} />
       ))}
 
@@ -87,4 +87,4 @@ export const Navigation = ({
   )
 }
 
-const itemIds = ['Intro', 'Skills', 'Projects', 'Contact']
+const itemIds = ['Intro', 'Skills', 'Projects', 'Reviews', 'Contact']

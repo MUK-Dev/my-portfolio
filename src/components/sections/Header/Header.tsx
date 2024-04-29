@@ -27,6 +27,7 @@ const Header = () => {
           <NavBtn href='#intro'>Intro</NavBtn>
           <NavBtn href='#skills'>Skills</NavBtn>
           <NavBtn href='#projects'>Projects</NavBtn>
+          <NavBtn href='#reviews'>Reviews</NavBtn>
           <NavBtn href='#contact'>Contact</NavBtn>
           {/* <NavBtn href='#conclusion'>Conclusion</NavBtn> */}
         </div>
