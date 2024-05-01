@@ -23,7 +23,7 @@ export default function getProjectsData<T>(): T {
         'I learned to make landscape from height maps, using assets and working with shader graph',
       skills: ['Unreal Engine 5', 'Quixel Bridge', 'Unreal Shader Graph'],
       blurHash:
-        '|cMZH1D,IWR-NKR-R-R-Rm~nWBRjWCWCWVWCazaytQt5WBayj@ayWCjtj@e.kCoefPayayf6f7azV[a#kBj[azjsjtazazjsWCa#j[j[j@fQf7fQbHWCaya#j[fkj[j@j@oeazWCaya}j[a|j[j[ayj[ayayayazj@j[j[',
+        '|oHn~dE2n~oLWBofWBa}jt?wxZRka|j?WVj?fRay5Axtjsayj[ayj[j@jtIVIps:j[a#oeazjsj[s8WBR+j[j[ayfkaza|skt6f6WVf6ayayfkayj[j[oeayWBj[f6jtj@W?WBWBj[oeayoKayfQbIWCayfQoLj@ayfQjt',
     },
     {
       type: 'GAME',
@@ -35,7 +35,7 @@ export default function getProjectsData<T>(): T {
         'I learned to use Unreal Engine 5, use materials, shader graph, placing assets, shortcut keys.',
       skills: ['Unreal Engine 5', 'Quixel Bridge'],
       blurHash:
-        '|bEo=BNIRkr;M{S5RioeWV.AWCxCjERjWXWAjsax9at5xXkWogo0bIWBjZDhs-WYo#t7n~ofR-j]RNa}S5ayoeoJofflbIawj]WYRjjYj]oLs.WVRij[Rkj[oeW=j[oIjZelayR+ofj[WVofaxoLRjayofWCayaxfkj[oe',
+        '|VE36gbdIpNdWBjEbHj?og?dxuRjRkWXf5j[ayofS$R.RjV@ogj[aea}oeD*WXoIRjofozaxa#j?jXfkWCaxaxt7oLayfRRljut6ofadkCofWBfQR*axt6ofaea#j[axWBRjWBofs:a#ayazj@WCV[aykCj[j]ayayj[a#',
     },
     {
       type: 'GAME',
