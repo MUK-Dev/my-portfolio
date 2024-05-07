@@ -2,20 +2,20 @@
 import useThemeMode from '@/src/hooks/useThemeMode'
 
 const skillsData = [
-  '/assets/skills/react.png',
+  // '/assets/skills/react.png',
+  '/assets/skills/unity.png',
+  '/assets/skills/firebase.png',
+  '/assets/skills/mongodb.png',
   '/assets/skills/JS.png',
   '/assets/skills/TS.png',
-  '/assets/skills/tailwindcss.png',
-  '/assets/skills/nextjs.png',
+  '/assets/skills/csharp.png',
+  // '/assets/skills/tailwindcss.png',
+  // '/assets/skills/nextjs.png',
   '/assets/skills/git.png',
-  '/assets/skills/nestjs.png',
-  '/assets/skills/mongodb.png',
+  // '/assets/skills/nestjs.png',
   '/assets/skills/nodejs.png',
-  // '/assets/skills/csharp.png',
   // '/assets/skills/cpp.png',
-  // '/assets/skills/unity.png',
-  // '/assets/skills/blender.png',
-  //   '/assets/skills/firebase.png',
+  '/assets/skills/blender.png',
   //   '/assets/skills/framer-motion.png',
   //   '/assets/skills/github.png',
   //   '/assets/skills/mui.png',
@@ -49,7 +49,7 @@ const SkillsGrid = () => {
         <img src={skillsData[7]} alt={skillsData[7]} className={imageClasses} />
       </div>
       <div className='flex justify-center gap-20 py-2'>
-        <img src={skillsData[8]} alt={skillsData[0]} className={imageClasses} />
+        <img src={skillsData[8]} alt={skillsData[8]} className={imageClasses} />
       </div>
     </div>
   )
