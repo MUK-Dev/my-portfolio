@@ -51,10 +51,10 @@ const Hero = () => {
     >
       <div className='flex flex-col z-50'>
         <h1 className='font-fasthand text-center text-6xl md:text-7xl dark:text-slate-50'>
-          Hi im Usman
+          MYSTIC CRAFTZ
         </h1>
         <h3 className='font-fasthand text-center text-3xl md:text-3xl dark:text-slate-50'>
-          game developer
+          making games made with magic
         </h3>
       </div>
       <AnimatePresence mode='popLayout'>
