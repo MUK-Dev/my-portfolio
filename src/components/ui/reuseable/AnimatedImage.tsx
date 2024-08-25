@@ -42,18 +42,23 @@ const AnimatedImage: FC<AnimatedImageProps> = ({
     }
   }, [currentImageIndex, duration, images.length])
 
-  return (
+  return images.map((image, index) => (
     <img
-      src={images[currentImageIndex]}
-      alt={images[currentImageIndex]}
-      style={{ ...position, transform: rotation }}
+      key={image}
+      src={image}
+      alt={image}
+      style={{
+        ...position,
+        transform: rotation,
+        display: index === currentImageIndex ? 'block' : 'none',
+      }}
       width={width}
       height={height}
       className={`${className} absolute ${invert ? 'scale-x-[-1]' : ''} ${
         isDark ? 'invert transition-all' : ''
       }`}
     />
-  )
+  ))
 }
 
 export default AnimatedImage
