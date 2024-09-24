@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import useThemeMode from '@/src/hooks/useThemeMode'
-import { Clouds } from '../../ui/hero'
-import AnimatedImage from '../../ui/reuseable/AnimatedImage'
+import useThemeMode from '@/src/hooks/useThemeMode';
+import { Clouds } from '../../ui/hero';
+import AnimatedImage from '../../ui/reuseable/AnimatedImage';
 
 const Hero = () => {
-  const { isDark } = useThemeMode()
+  const { isDark } = useThemeMode();
 
   const MOON_SUN = {
     initial: {
@@ -21,7 +21,7 @@ const Hero = () => {
       y: '-100vh',
       scale: 0.2,
     },
-  }
+  };
 
   const DAY_NIGHT = {
     initial: {
@@ -33,7 +33,7 @@ const Hero = () => {
     exit: {
       opacity: 0,
     },
-  }
+  };
 
   const CLOUDS = {
     animate: {
@@ -42,7 +42,7 @@ const Hero = () => {
     exit: {
       opacity: 0,
     },
-  }
+  };
 
   return (
     <main
@@ -50,11 +50,11 @@ const Hero = () => {
       className='flex w-full justify-center items-center h-[90vh] overflow-hidden dark:bg-slate-950 transition-colors relative'
     >
       <div className='flex flex-col z-50'>
-        <h1 className='font-fasthand text-center text-6xl md:text-7xl dark:text-slate-50'>
-          M. Usman Khilji
+        <h1 className='text-center text-5xl md:text-7xl dark:text-slate-50'>
+          Hi im <span className='font-bold'>Usman</span>
         </h1>
-        <h3 className='font-fasthand text-center text-3xl md:text-3xl dark:text-slate-50'>
-          game dev
+        <h3 className='text-center text-3xl md:text-3xl dark:text-slate-50'>
+          <span className='font-bold'>Game</span> developer
         </h3>
       </div>
       <AnimatePresence mode='popLayout'>
@@ -186,7 +186,7 @@ const Hero = () => {
         invert
       />
     </main>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -269,5 +269,5 @@ export default function getProjectsData<T>(): T {
     //     '|15YKPysIr_N.S.Tt,Qmo}_NPVKjt,adtmWYpci_S2X.y?ayTJWCf,x]jGTxbwrrl9b_Tdnhq]eTH?rqyXTJtSZ$ozV@ad8wxs%1MztljEm,XTVs9avfz:Mwt8V?oyZ$XSD4vg$fRPmRZhpIpdW;U^n3vzZ3n4ivn+l9gN',
     //   link: 'https://react-dashboard-six-lime.vercel.app',
     // },
-  ] as T
+  ] as T;
 }

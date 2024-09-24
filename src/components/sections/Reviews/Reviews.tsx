@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import 'keen-slider/keen-slider.min.css'
-import { Moment } from 'moment'
+import React from 'react';
+import 'keen-slider/keen-slider.min.css';
+import { Moment } from 'moment';
 
-import { useKeenSlider } from 'keen-slider/react'
-import getReviewsData from '@/src/services/getReviewsData'
+import { useKeenSlider } from 'keen-slider/react';
+import getReviewsData from '@/src/services/getReviewsData';
 
 interface ReviewSlide {
-  platform: 'Upwork' | 'LinkedIn' | 'Local' | 'Fiverr'
-  jobTitle: string
-  review: string
-  stars: number
-  startDate: Moment
-  endDate: Moment
-  jobType: 'Fixed Price' | 'Weekly Fixed Rate' | 'Hourly Rate'
+  platform: 'Upwork' | 'LinkedIn' | 'Local' | 'Fiverr';
+  jobTitle: string;
+  review: string;
+  stars: number;
+  startDate: Moment;
+  endDate: Moment;
+  jobType: 'Fixed Price' | 'Weekly Fixed Rate' | 'Hourly Rate';
 }
 
-const data = getReviewsData<ReviewSlide[]>()
+const data = getReviewsData<ReviewSlide[]>();
 
 const Reviews = () => {
   const [sliderRef, _] = useKeenSlider({
@@ -29,15 +29,17 @@ const Reviews = () => {
       },
     },
     loop: true,
-  })
+  });
 
-  const makeSlide = (slideDto: ReviewSlide) => {
+  const makeSlide = (slideDto: ReviewSlide, index: number) => {
     return (
       <div
         key={slideDto.jobTitle}
         className='keen-slider__slide p-2 border rounded break-words flex flex-col justify-center'
       >
-        <h5 className='text-3xl font-fasthand pb-2'>{slideDto.jobTitle}</h5>
+        <h5 className='text-3xl font-fasthand pb-2'>
+          {index + 1}. {slideDto.jobTitle}
+        </h5>
         <p className='pb-2'>
           {slideDto.startDate.format('LL')} - {slideDto.endDate.format('LL')}
         </p>
@@ -57,23 +59,23 @@ const Reviews = () => {
           {slideDto.platform}
         </p>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <section
       id='reviews'
       className='px-3 pb-16 transition-colors flex flex-col items-center dark:text-slate-50 dark:bg-slate-950'
     >
-      <h2 className='font-fasthand text-7xl pb-7 dark:text-slate-50 z-50'>
-        Testimonials
+      <h2 className='text-5xl pb-7 dark:text-slate-50 z-50'>
+        Testimonials {data.length}
       </h2>
 
       <div ref={sliderRef} className='keen-slider'>
-        {data.map((slideDto) => makeSlide(slideDto))}
+        {data.map((slideDto, index) => makeSlide(slideDto, index))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;

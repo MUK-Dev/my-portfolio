@@ -1,5 +1,5 @@
-import AnimatedImage from '../../ui/reuseable/AnimatedImage'
-import { SkillsGrid, Waves } from '../../ui/skills'
+import AnimatedImage from '../../ui/reuseable/AnimatedImage';
+import { SkillsGrid, Waves } from '../../ui/skills';
 
 const Skills = () => {
   return (
@@ -7,7 +7,7 @@ const Skills = () => {
       id='skills'
       className='relative pb-5 min-h-screen md:pb-0 md:min-h-[90vh] dark:bg-slate-950 transition-colors flex justify-start items-center flex-col overflow-hidden'
     >
-      <h2 className='font-fasthand text-7xl dark:text-slate-50 z-50'>Skills</h2>
+      <h2 className='text-5xl dark:text-slate-50 z-50'>Skills</h2>
       <SkillsGrid />
       {/* Leapord animation */}
       <AnimatedImage
@@ -54,7 +54,7 @@ const Skills = () => {
       />
       <Waves />
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
