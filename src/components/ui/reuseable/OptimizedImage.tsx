@@ -1,27 +1,27 @@
-import { useState } from 'react'
-import { Blurhash } from 'react-blurhash'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useState } from 'react';
+import { Blurhash } from 'react-blurhash';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface IOptimizedImageProps {
-  image: { src: string; blurhash: string }
+  image: { src: string; blurhash: string };
 }
 
 function OptimizedImage(props: IOptimizedImageProps) {
-  const { image } = props
+  const { image } = props;
 
-  const [isLoaded, setLoaded] = useState(false)
-  const [isLoadStarted, setLoadStarted] = useState(false)
+  const [isLoaded, setLoaded] = useState(false);
+  const [isLoadStarted, setLoadStarted] = useState(false);
 
   const handleLoad = () => {
-    setLoaded(true)
-  }
+    setLoaded(true);
+  };
 
   const handleLoadStarted = () => {
-    setLoadStarted(true)
-  }
+    setLoadStarted(true);
+  };
 
   return (
-    <div className='relative'>
+    <div className='relative hidden 2xl:block'>
       <LazyLoadImage
         key={image.blurhash}
         src={image.src}
@@ -41,7 +41,7 @@ function OptimizedImage(props: IOptimizedImageProps) {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default OptimizedImage
+export default OptimizedImage;

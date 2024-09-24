@@ -110,15 +110,12 @@ export default function getProjectsData<T>(): T {
       description:
         'Worked as a Project Lead building the Student Portal for my University This was my final year project. Our team of 6 developers collaborated to create a full scale student portal for managing attendance, results and much more.',
       learned:
-        'I learned to guide and lead the team to finish milestones, and we implemented complete custom made dashboard, role based authentication(Student, Teacher, Parent, Admin), attendance system, result system, reports generation system.',
+        'We implemented complete custom made dashboard, role based authentication(Student, Teacher, Parent, Admin), attendance system, result system, reports generation system.',
       skills: [
         'React',
         'react-query',
         'MUI',
         'Framer Motion',
-        'Apex Charts',
-        'Vite',
-        'react-mui-event-calendar',
         'Node JS',
         'Express',
         'MongoDB',
@@ -198,6 +195,17 @@ export default function getProjectsData<T>(): T {
     },
     {
       type: 'WEB',
+      img: '/assets/projects/Infinite Stock Photos.jpeg',
+      title: 'Infinite Stock Photos',
+      description:
+        'InfiniteStockPhotos.com was an AI image generation website using Stable Diffusion. Made for a client on Upwork. My role was to rebuild the frontend in React',
+      learned: '',
+      skills: ['React', 'MUI', 'Firebase'],
+      blurHash:
+        '|sLDldR%xuV@x]RkxuWBs;~DoyR*ofRjofV@ofax=|oyWBkCWBofaxj[WUvzkBj@f7f5fkbHaeafMdfhkBjZkBf6j@jtj[H?bYbbayf+WVj[fkj[MdbFkCf6offQj[jZj[iwkBayj[jsj@j[aybHsmbajsj[WCj[aeayay',
+    },
+    {
+      type: 'WEB',
       img: '/assets/projects/Faststartup.png',
       title: 'Fast Startup',
       description:
@@ -208,6 +216,29 @@ export default function getProjectsData<T>(): T {
       blurHash:
         '|MM?~X070A9g~N^{oID;D--jRoR+j[odocRnjsa#^vIbIr%GWDWCj[aya#D=xot5WCWCRnxoWYaxxWWFayWEodocR-jsa#-jNLR+oeoKocRnj?j[D=xot5RlayWEoba$oIt3WEf6WEodoJa#ayWExpR-WCoLj@j?WXfPa#',
       link: 'https://meet.faststartup.io',
+    },
+    {
+      type: 'WEB',
+      img: '/assets/projects/Lets Write.png',
+      title: 'Lets Write',
+      description:
+        'The main idea of lets-write was to create an application where teachers can create rooms for tests where the students can join and solve the questions posted by the teacher.',
+      learned:
+        'Spend almost every day for a month making this project and I loved making this.',
+      skills: [
+        'React',
+        'JavaScript',
+        'MUI',
+        'Redux',
+        'Feathers JS',
+        'Socket IO',
+        'Node JS',
+        'Express',
+        'MongoDB',
+        'Github OAuth',
+      ],
+      blurHash:
+        '|06k#EFNR4ivwHIA9FxBv|=W01%M%MW=WBR.oeR*}$01xtbHS4RjNHxtt6~o0Mad-p.8V@D*xtxu}O4;-:xtozj@W=xtxt~V00oItSIUadIVbbt7}O9bxtjFxvj@NHxa%L~V4=xtxZxus:Ipt6xu;b4;%MM{M|t7bIjYxZ',
     },
     {
       type: 'WEB',
@@ -224,6 +255,24 @@ export default function getProjectsData<T>(): T {
     },
     {
       type: 'WEB',
+      img: '/assets/projects/Travel Advisor.jpeg',
+      title: 'Travel Advisor',
+      description:
+        'Travel Advisor is an application which helps you find restaurants around you.',
+      learned: 'Made this project 2 years ago to learn Google Maps API.',
+      skills: [
+        'React',
+        'JavaScript',
+        'MUI',
+        'Google Maps',
+        'Places API',
+        'Restaurants API',
+      ],
+      blurHash:
+        '|SJ[9j~p~WD%WCM{oz-;RkD+IUaxV@ozoffQofRj.AS6-;flRiadRif6oy4;tR%MazRjaxWBf6j[bKIUD%xat7kCofj]j[D+ofWAoft7aeWCofofjxRjD%ayt7xbkBM{ax9GafRjayj]fkt7M{j[t9RjRjt7aeofjuj[WB',
+    },
+    {
+      type: 'WEB',
       img: '/assets/projects/React Dashboard.png',
       title: 'React Dashboard',
       description: 'A practice dasboard I created when I learned React.',
@@ -234,5 +283,25 @@ export default function getProjectsData<T>(): T {
         '|15YKPysIr_N.S.Tt,Qmo}_NPVKjt,adtmWYpci_S2X.y?ayTJWCf,x]jGTxbwrrl9b_Tdnhq]eTH?rqyXTJtSZ$ozV@ad8wxs%1MztljEm,XTVs9avfz:Mwt8V?oyZ$XSD4vg$fRPmRZhpIpdW;U^n3vzZ3n4ivn+l9gN',
       link: 'https://react-dashboard-six-lime.vercel.app',
     },
-  ] as T
+    {
+      type: 'WEB',
+      img: '/assets/projects/Whooly Craftz.png',
+      title: 'Whooly Craftz',
+      description:
+        'Made this project 3 years ago while I was pretty new to the MERN stack. An e-commerce website with a custom backend and an admin panel.',
+      learned:
+        'I learned to create full-stack ecommerce website, creating an admin panel to manage data, regex searches.',
+      skills: [
+        'React',
+        'JavaScript',
+        'Materialize CSS',
+        'Redux',
+        'Node JS',
+        'Express',
+        'MongoDB',
+      ],
+      blurHash:
+        '|JMjdh4-Rj^+f*-;IU-V%N00H@S2xuR*xtRjozac00-pR*V@IUIUx]RPj]~B?bkCIURjM{%MMxWX.9-Wt7IV-;t7aeSeRO8^J6s:jY-;ogNGxax]GGM|j[WXWBaxRjx]adyDoKaKt6MxM|a{t7Rj0eNtj@WCWBt6jbV@W=',
+    },
+  ] as T;
 }

@@ -1,9 +1,9 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { MdMailOutline } from 'react-icons/md'
-import { RotatingCircle } from '../../ui/contact'
-import { FiGithub, FiYoutube } from 'react-icons/fi'
-import { BiLogoUpwork, BiLogoLinkedin } from 'react-icons/bi'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MdMailOutline } from 'react-icons/md';
+import { RotatingCircle } from '../../ui/contact';
+import { FiGithub, FiYoutube } from 'react-icons/fi';
+import { BiLogoUpwork, BiLogoLinkedin } from 'react-icons/bi';
 
 const Contact = () => {
   return (
@@ -11,7 +11,7 @@ const Contact = () => {
       id='contact'
       className='p-5 min-h-screen max-h-screen md:min-h-[80vh] bg-white dark:bg-slate-950 overflow-hidden w-full relative'
     >
-      <h2 className='font-fasthand text-center text-7xl pb-[10rem] dark:text-slate-50 z-50'>
+      <h2 className='text-center text-5xl pb-[10rem] dark:text-slate-50 z-50'>
         Contact
       </h2>
       <div className='flex items-start justify-center text-black dark:text-white'>
@@ -90,7 +90,7 @@ const Contact = () => {
         <RotatingCircle />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

@@ -11,10 +11,14 @@
   font-family: Fasthand;
   src: url(/fonts/Fasthand-Regular.ttf);
 }
+@font-face {
+  font-family: Quicksand;
+  src: url(/fonts/Quicksand-Regular.ttf);
+}
 
 @layer base {
   html {
-    font-family: Inter, system-ui, sans-serif;
+    font-family: Quicksand, system-ui, sans-serif;
     scroll-padding-top: 10rem;
     scroll-behavior: smooth;
     /* text-transform: lowercase; */
@@ -23,4 +27,8 @@
 
 .font-fasthand {
   font-family: Fasthand, system-ui, sans-serif;
+}
+
+.font-quicksand {
+  font-family: Quicksand, system-ui, sans-serif;
 }
