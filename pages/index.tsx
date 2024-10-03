@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 import {
   Contact,
@@ -7,11 +7,11 @@ import {
   Projects,
   Reviews,
   Skills,
-} from '@/src/components/sections'
-import useThemeMode from '@/src/hooks/useThemeMode'
+} from '@/src/components/sections';
+import useThemeMode from '@/src/hooks/useThemeMode';
 
 export default function Home() {
-  const { isDark } = useThemeMode()
+  const { isDark } = useThemeMode();
 
   return (
     <>
@@ -27,5 +27,5 @@ export default function Home() {
         <Contact />
       </main>
     </>
-  )
+  );
 }

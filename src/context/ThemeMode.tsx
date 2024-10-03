@@ -23,12 +23,10 @@ const ThemeModeProvider = ({ children }: any) => {
   useEffect(() => {
     if (isFirstRender.current) {
       setTimeout(() => {
-        console.log('hello 1');
         toggleTheme();
       }, 1000);
 
       setTimeout(() => {
-        console.log('hello 2');
         toggleTheme();
       }, 1750);
 
