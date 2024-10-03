@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@bradgarropy/next-google-analytics':
+        specifier: ^1.0.2
+        version: 1.0.2(next@13.4.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@types/node':
         specifier: 20.4.1
         version: 20.4.1
@@ -83,6 +86,13 @@ packages:
   '@babel/runtime@7.23.6':
     resolution: {integrity: sha512-zHd0eUrf5GZoOWVCXp6koAKQTfZV07eit6bGPmJgnZdnSAvvZee6zniW2XMF7Cmc4ISOOnPy3QaSiIJGJkVEDQ==}
     engines: {node: '>=6.9.0'}
+
+  '@bradgarropy/next-google-analytics@1.0.2':
+    resolution: {integrity: sha512-Xhli9NkdJbmvs1QNAcC9At3w/GIlXunVIMQzcAYfVP8tQSX3Q4un0doZfQknNvRz+QO6we+8lDE4/dMOio0vzQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      next: '>=12'
+      react: '>=16'
 
   '@emotion/is-prop-valid@0.8.8':
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
@@ -1493,6 +1503,11 @@ snapshots:
   '@babel/runtime@7.23.6':
     dependencies:
       regenerator-runtime: 0.14.0
+
+  '@bradgarropy/next-google-analytics@1.0.2(next@13.4.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      next: 13.4.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
 
   '@emotion/is-prop-valid@0.8.8':
     dependencies:
