@@ -105,6 +105,26 @@ export default function getProjectsData<T>(): T {
     // },
     {
       type: 'WEB',
+      img: '/assets/projects/here-project.png',
+      title: 'Here Project',
+      description:
+        'Didnt want to pay for MIRO subscription so I made my own. It is not a full-fledged miro but it has some features like',
+      learned:
+        'I learned to work with Convex, Clerk, and Live blocks to create this real-time prototying application. Using SVG to draw shapes and other features.',
+      skills: [
+        'Next JS',
+        'Typescript',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'Convex',
+        'Clerk',
+        'Liveblocks',
+      ],
+      blurHash:
+        '|MP?p]Tg.8}kyY9GDiR.%L*0-68_E,VX%L?bIUR,8_bakCs:bbV@axWBofD$R.%MngkDRkMyt8oJkWRPj?NHM{t8V[tQRjtQRPs;NKRjs:NGxaRjD%Rjt7j@j[ayRjozWBIBW?kBskozWVjFf8ayE2n$Rjbvn$smozV[ag',
+    },
+    {
+      type: 'WEB',
       img: '/assets/projects/NFC Student Portal.png',
       title: 'NFC IET Student Portal',
       description:
